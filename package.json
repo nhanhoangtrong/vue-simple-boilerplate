@@ -1,28 +1,42 @@
 {
   "name": "vue-webpack4-boilerplate",
-  "description":
-    "A Vue.js boilerplate using Webpack 4 for bootstrapping your project",
+  "description": "A Vue.js boilerplate using Webpack 4 for bootstrapping your project",
   "version": "0.0.0",
   "author": "Nhan Hoang <siege250294@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "test": "karma start --single-run"
   },
   "dependencies": {
     "vue": "^2.5.11",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.12",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
+    "chai": "^4.1.2",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
+    "karma": "^2.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "^0.0.32",
+    "karma-webpack": "^3.0.0",
+    "mocha": "^5.0.4",
     "node-sass": "^4.5.3",
     "prettier": "^1.11.1",
     "sass-loader": "^6.0.6",
