@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "test": "jest"
   },
   "dependencies": {
     "vue": "^2.5.11",
@@ -16,21 +17,32 @@
   },
   "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.12",
     "babel-core": "^6.26.0",
+    "babel-jest": "^23.0.0-alpha.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
+    "jest": "^22.4.2",
     "node-sass": "^4.5.3",
     "prettier": "^1.11.1",
     "sass-loader": "^6.0.6",
     "uglifyjs-webpack-plugin": "^1.2.4",
+    "vue-jest": "^2.2.1",
     "vue-loader": "^14.2.1",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
+  },
+  "jest": {
+    "moduleFileExtensions": ["js", "json", "vue"],
+    "transform": {
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
   }
 }
