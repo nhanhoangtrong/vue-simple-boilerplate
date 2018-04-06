@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const DEV = process.env.NODE_ENV !== 'production';
 
@@ -65,13 +66,13 @@ module.exports = exports = {
     },
     resolve: {
         alias: {
-            vue$: 'vue/dist/vue.esm.js',
+            vue$: DEV ? 'vue/dist/vue.esm.js' : 'vue/dist/vue.runtime.esm.js',
         },
         extensions: ['*', '.js', '.vue', '.json'],
     },
     devServer: {
         historyApiFallback: true,
-        logLevel: DEV ? 'warn' : 'info',
+        logLevel: DEV ? 'debug' : 'warn',
         overlay: true,
     },
     performance: {
@@ -82,7 +83,7 @@ module.exports = exports = {
         minimize: !DEV,
         nodeEnv: process.env.NODE_ENV,
     },
-    plugins: [new webpack.NamedModulesPlugin()],
+    plugins: [new CleanWebpackPlugin('dist'), new webpack.NamedModulesPlugin()],
 };
 
 if (process.env.NODE_ENV === 'production') {
