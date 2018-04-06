@@ -1,12 +1,10 @@
-import { shallow } from '@vue/test-utils';
+import Vue from 'vue';
 import { expect } from 'chai';
 import World from '../src/components/World.vue';
 
 describe('Test World component', () => {
     it('Render World with suitable content and name', () => {
-        const wrapper = shallow(World);
-
-        expect(wrapper.find('h2').text()).to.be.equal('World!');
-        expect(wrapper.name()).to.be.eq('world');
+        const Constructor = Vue.extend(World);
+        const vm = new Constructor().$mount();
     });
 });
