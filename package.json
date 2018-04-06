@@ -28,6 +28,7 @@
     "chai": "^4.1.2",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
+    "eslint": "^4.19.1",
     "file-loader": "^1.1.4",
     "karma": "^2.0.0",
     "karma-chai": "^0.1.0",
