@@ -1,7 +1,6 @@
 {
   "name": "vue-webpack4-boilerplate",
-  "description":
-    "A Vue.js boilerplate using Webpack 4 for bootstrapping your project",
+  "description": "A Vue.js boilerplate using Webpack 4 for bootstrapping your project",
   "version": "0.0.0",
   "author": "Nhan Hoang <siege250294@gmail.com>",
   "license": "MIT",
@@ -13,9 +12,14 @@
   "dependencies": {
     "vue": "^2.5.11",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^5.0.0"
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.12",
     "babel-core": "^6.26.0",
@@ -39,7 +43,11 @@
     "webpack-dev-server": "^3.1.1"
   },
   "jest": {
-    "moduleFileExtensions": ["js", "json", "vue"],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
     "transform": {
       ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
