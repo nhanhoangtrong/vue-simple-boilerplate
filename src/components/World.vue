@@ -1,7 +1,6 @@
 <template>
   <div>
     <h2>got "{{ allWorlds[0].world }}"</h2>
-    <p v-if="$apollo.loading">Loading...</p>
   </div>
 </template>
 
