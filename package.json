@@ -1,12 +1,18 @@
 {
   "name": "vue-webpack4-boilerplate",
-  "description": "A Vue.js boilerplate using Webpack 4 for bootstrapping your project",
+  "description":
+    "A Vue.js boilerplate using Webpack 4 for bootstrapping your project",
   "version": "0.0.0",
   "author": "Nhan Hoang <siege250294@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
+    "serve": "http-server .",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "analyze:dev":
+      "cross-env NODE_ENV=development webpack --progress --profile --json > stats.json && webpack-bundle-analyzer stats.json",
+    "analyze:prod":
+      "cross-env NODE_ENV=production webpack --progress --profile --json > stats.json && webpack-bundle-analyzer stats.json",
     "test": "jest"
   },
   "dependencies": {
@@ -15,11 +21,7 @@
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.12",
     "babel-core": "^6.26.0",
@@ -27,9 +29,11 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
+    "http-server": "^0.11.1",
     "jest": "^22.4.2",
     "node-sass": "^4.5.3",
     "prettier": "^1.11.1",
@@ -39,15 +43,12 @@
     "vue-loader": "^14.2.1",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^4.1.1",
+    "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "vue"
-    ],
+    "moduleFileExtensions": ["js", "json", "vue"],
     "transform": {
       ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
