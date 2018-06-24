@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const DEV = process.env.NODE_ENV !== 'production';
 
@@ -11,8 +12,8 @@ module.exports = exports = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
-        filename: 'build.js',
+        publicPath: '/',
+        filename: 'build.[hash].js',
     },
     module: {
         rules: [
@@ -74,6 +75,7 @@ module.exports = exports = {
         historyApiFallback: true,
         logLevel: DEV ? 'debug' : 'warn',
         overlay: true,
+        contentBase: './dist',
     },
     performance: {
         hints: false,
@@ -83,7 +85,15 @@ module.exports = exports = {
         minimize: !DEV,
         nodeEnv: process.env.NODE_ENV,
     },
-    plugins: [new CleanWebpackPlugin('dist'), new webpack.NamedModulesPlugin()],
+    plugins: [
+        new CleanWebpackPlugin('dist'),
+        new webpack.NamedModulesPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'Vue Simple Boilerplate',
+            template: './index.html',
+            minify: !DEV,
+        }),
+    ],
 };
 
 if (process.env.NODE_ENV === 'production') {
