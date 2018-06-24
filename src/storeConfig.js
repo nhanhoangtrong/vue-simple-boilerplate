@@ -1,10 +1,10 @@
+import * as counter from './modules/counter/counterState';
+
 export default {
     state: {
-        count: 0,
+        counter: counter.initialState,
     },
     mutations: {
-        incr(state) {
-            state.count++;
-        },
+        ...counter.mutations,
     },
 };

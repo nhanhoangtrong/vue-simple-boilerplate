@@ -2,13 +2,15 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links: {{ count }}</h2>
+    
     <ul>
       <li><router-link to="/" >Home</router-link></li>
       <li><router-link to="/world">World</router-link></li>
-      <li><button @click="increment">Increment</button></li>
+      <li><router-link to="/counter">Counter</router-link></li>
     </ul>
-    <router-view></router-view>
+    <div class="view-wrapper">
+        <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -19,16 +21,6 @@ export default {
         return {
             msg: 'Welcome to Your Vue.js App',
         };
-    },
-    computed: {
-        count() {
-            return this.$store.state.count;
-        },
-    },
-    methods: {
-        increment() {
-            return this.$store.commit('incr');
-        },
     },
 };
 </script>
