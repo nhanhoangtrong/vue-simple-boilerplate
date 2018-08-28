@@ -35,7 +35,7 @@
       "experimentalDecorators": true
     }
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": ["eslint:recommended"],
   "rules": {
     "semi": ["error", "always"],
     "no-unused-vars": [
@@ -46,6 +46,5 @@
       }
     ],
     "no-console": [1]
-  },
-  "plugins": ["react"]
+  }
 }
