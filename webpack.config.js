@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const DEV = process.env.NODE_ENV !== 'production';
 
@@ -86,6 +87,7 @@ module.exports = exports = {
         nodeEnv: process.env.NODE_ENV,
     },
     plugins: [
+        new VueLoaderPlugin(),
         new CleanWebpackPlugin('dist'),
         new webpack.NamedModulesPlugin(),
         new HtmlWebpackPlugin({
