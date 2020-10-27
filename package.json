@@ -43,7 +43,7 @@
     "sass-loader": "^7.0.3",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "vue-jest": "^2.2.1",
-    "vue-loader": "15.4.1",
+    "vue-loader": "15.9.4",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^4.1.1",
     "webpack-bundle-analyzer": "^2.11.1",
