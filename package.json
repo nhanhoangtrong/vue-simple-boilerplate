@@ -39,7 +39,7 @@
     "http-server": "^0.11.1",
     "jest": "^23.1.0",
     "node-sass": "^4.5.3",
-    "prettier": "^1.11.1",
+    "prettier": "^2.2.1",
     "sass-loader": "^7.0.3",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "vue-jest": "^2.2.1",
